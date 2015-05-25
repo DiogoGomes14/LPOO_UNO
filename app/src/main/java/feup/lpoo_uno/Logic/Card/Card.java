@@ -8,7 +8,7 @@ package feup.lpoo_uno.Logic.Card;
 public abstract class Card {
 
 	public Card(){
-		
+
 	}
 
 	public void finalize() throws Throwable {
