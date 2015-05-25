@@ -10,7 +10,7 @@ public class WildCard extends Card {
 	private String colorChoosen = null;
 
 	public WildCard(){
-
+		this.value = 50;
 	}
 
 	public void finalize() throws Throwable {

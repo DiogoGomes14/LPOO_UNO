@@ -5,10 +5,10 @@ package feup.lpoo_uno.Logic.Card;
  * @version 1.0
  * @created 25-Mai-2015 15:48:09
  */
-public class CardDrawTwo extends ColoredCard {
+public class CardDrawTwo extends ActionCard {
 
-	public CardDrawTwo(){
-
+	public CardDrawTwo(int number) {
+		super();
 	}
 
 	public void finalize() throws Throwable {

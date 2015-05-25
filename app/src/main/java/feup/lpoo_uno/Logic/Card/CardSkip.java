@@ -5,10 +5,10 @@ package feup.lpoo_uno.Logic.Card;
  * @version 1.0
  * @created 25-Mai-2015 15:48:11
  */
-public class CardSkip extends ColoredCard {
+public class CardSkip extends ActionCard {
 
-	public CardSkip(){
-
+	public CardSkip(int number) {
+		super();
 	}
 
 	public void finalize() throws Throwable {

@@ -9,6 +9,8 @@ public abstract class Card {
 
     protected enum Color {RED, YELLOW, GREEN, BLUE}
 
+	protected int value;
+
 	public Card(){
 
 	}
@@ -17,4 +19,11 @@ public abstract class Card {
 
 	}
 
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

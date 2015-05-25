@@ -9,8 +9,8 @@ public class CardNumbered extends ColoredCard {
 
 	private int number;
 
-	public CardNumbered(){
-
+	public CardNumbered(int number){
+		this.value = number;
 	}
 
 	public void finalize() throws Throwable {
