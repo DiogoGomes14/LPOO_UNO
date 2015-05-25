@@ -1,5 +1,7 @@
 package feup.lpoo_uno.Logic.Core;
 
+import java.util.Random;
+
 import feup.lpoo_uno.Logic.CardList.Deck;
 import feup.lpoo_uno.Logic.CardList.PlayedCards;
 
@@ -10,22 +12,37 @@ import feup.lpoo_uno.Logic.CardList.PlayedCards;
  */
 public class Uno {
 
+    /**
+     * enum : left, right
+     */
+    private enum Orientation {
+        LEFT,
+        RIGHT
+    }
+
 	private Player currentPlayer;
 	private Deck deck;
 	private PlayedCards playedCards = null;
 	private Player[] players;
-	/**
-	 * enum : left, right
-	 */
-	private String orientation = "left";
+    private Orientation orientation = Orientation.LEFT;
 
-	public Uno(){
+    public Uno(){
 
 	}
 
-	public void finalize() throws Throwable {
+    public Uno(Deck deck){
+        this.deck = deck;
+    }
 
-	}
+    public void finalize() throws Throwable {
+
+    }
+
+    public void inicializePlayers(Player[] players){
+        this.players = players;
+        this.currentPlayer = players[new Random().nextInt()];
+    }
+
 
 	public boolean mainLoop(){
 		return false;
@@ -33,23 +50,29 @@ public class Uno {
 
 	/**
 	 * 
-	 * @param player
+	 * @param playerIndex
 	 * @param numberCards
 	 */
-	public boolean playerDraw(Player player, int numberCards){
-		return false;
+	public boolean playerDraw(int playerIndex, int numberCards){
+		if(numberCards == 1 || numberCards == 2 || numberCards == 4){
+            for (int i = 0; i < numberCards; i++){
+                players[playerIndex].addCard(deck.drawTopCard());
+            }
+            return true;
+        }
+        else return false;
 	}
 
-	public String switchOrientation(){
-		return "";
+	public void switchOrientation(){
+        this.orientation = (this.orientation == Orientation.RIGHT ? Orientation.LEFT : Orientation.LEFT);
 	}
 
 	/**
-	 * 
-	 * @param player
-	 */
-	public boolean playerTurn(Player player){
-		return false;
+	 *
+     * @param player
+     */
+	public void playerTurn(Player player){
+		this.currentPlayer = player;
 	}
 
 }

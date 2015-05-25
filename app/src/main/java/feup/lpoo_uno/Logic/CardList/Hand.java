@@ -1,4 +1,6 @@
 package feup.lpoo_uno.Logic.CardList;
+import java.util.ArrayList;
+
 import feup.lpoo_uno.Logic.Card.Card;
 
 /**
@@ -8,24 +10,12 @@ import feup.lpoo_uno.Logic.Card.Card;
  */
 public class Hand extends CardList {
 
-	public Hand(){
-
+	public Hand(ArrayList<Card> cards){
+		super(cards);
 	}
 
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
-
-	Card[] getCards(){
-		return null;
-	}
-
-	/**
-	 * 
-	 * @param card
-	 */
-	public boolean addCard(Card card){
-		return false;
-	}
+	public Card useCard(int index){ //TODO error handling
+        return this.cardList.get(index);
+    }
 
 }

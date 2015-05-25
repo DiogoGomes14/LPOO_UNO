@@ -7,6 +7,8 @@ package feup.lpoo_uno.Logic.Card;
  */
 public abstract class Card {
 
+    protected enum Color {RED, YELLOW, GREEN, BLUE}
+
 	public Card(){
 
 	}

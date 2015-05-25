@@ -1,4 +1,6 @@
 package feup.lpoo_uno.Logic.CardList;
+import java.util.ArrayList;
+
 import feup.lpoo_uno.Logic.Card.Card;
 
 /**
@@ -8,30 +10,30 @@ import feup.lpoo_uno.Logic.Card.Card;
  */
 public abstract class CardList {
 
-	private Card[] cardList;
+	protected ArrayList<Card> cardList;
 
-	public CardList(){
+	public CardList(ArrayList<Card> cards){
+		this.cardList = cards;
+	}
 
+	public ArrayList<Card> getCards(){
+		return cardList;
+	}
+
+	/**
+	 *
+	 * @param card
+	 */
+	public void addCard(Card card){
+		this.cardList.add(card);
+	}
+
+	public Card drawTopCard(){
+		return cardList.get(cardList.size() - 1);
 	}
 
 	public void finalize() throws Throwable {
 
-	}
-
-	Card[] getCards(){
-		return null;
-	}
-
-	/**
-	 * 
-	 * @param card
-	 */
-	public boolean addCard(Card card){
-		return false;
-	}
-
-	public Card drawTopCard(){
-		return null;
 	}
 
 }

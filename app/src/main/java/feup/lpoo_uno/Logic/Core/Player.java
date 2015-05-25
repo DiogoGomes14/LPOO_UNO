@@ -1,5 +1,7 @@
 package feup.lpoo_uno.Logic.Core;
 
+import java.util.ArrayList;
+
 import feup.lpoo_uno.Logic.Card.Card;
 import feup.lpoo_uno.Logic.CardList.Hand;
 
@@ -10,43 +12,36 @@ import feup.lpoo_uno.Logic.CardList.Hand;
  */
 public class Player {
 
-	private Hand Hand;
+	private Hand hand;
 	private String name;
 
-	public Player(){
-
+	public Player(Hand hand, String name){
+		this.hand = hand;
+		this.name = name;
 	}
 
 	public void finalize() throws Throwable {
 
 	}
 
-	/**
-	 * 
-	 * @param name
-	 */
-	Player(String name){
-
-	}
-
-	Card[] getCards(){
-		return null;
+	ArrayList<Card> getHand(){
+		return hand.getCards();
 	}
 
 	/**
-	 * 
-	 * @param card
-	 */
-	boolean addCard(Card card){
-		return false;
+	 *
+     * @param card
+     */
+	void addCard(Card card){
+		this.hand.addCard(card);
 	}
 
 	/**
 	 * 
 	 * @param index
 	 */
-	public boolean useCard(Card index){
-		return false;
+	public Card useCard(int index){
+		return this.hand.getCards().get(index);
 	}
 
 }

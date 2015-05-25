@@ -1,6 +1,8 @@
 package feup.lpoo_uno.Logic.CardList;
+
+import java.util.ArrayList;
+
 import feup.lpoo_uno.Logic.Card.Card;
-import feup.lpoo_uno.Logic.Core.Uno;
 
 /**
  * @author Sony
@@ -9,38 +11,20 @@ import feup.lpoo_uno.Logic.Core.Uno;
  */
 public class Deck extends CardList {
 
-	public Uno m_Uno;
-
-	public Deck(){
-
-	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
-
 	/**
-	 * 
-	 * @param card
+	 *
+	 * @param cards
 	 */
-	public Deck(Card[] card){
-
+	public Deck(ArrayList<Card> cards){
+		super(cards);
 	}
 
-	Card[] getCards(){
-		return null;
-	}
+    public void shuffle(){ //TODO
 
-	/**
-	 * 
-	 * @param card
-	 */
-	public boolean addCard(Card card){
-		return false;
-	}
+    }
 
-	public Card drawTopCard(){
-		return null;
-	}
+	public void setCards(ArrayList<Card> cards){
+        this.cardList = cards;
+    }
 
 }

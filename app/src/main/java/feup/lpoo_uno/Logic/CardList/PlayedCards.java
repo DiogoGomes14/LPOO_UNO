@@ -1,6 +1,8 @@
 package feup.lpoo_uno.Logic.CardList;
+
+import java.util.ArrayList;
+
 import feup.lpoo_uno.Logic.Card.Card;
-import feup.lpoo_uno.Logic.Core.Uno;
 
 /**
  * @author Sony
@@ -10,30 +12,22 @@ import feup.lpoo_uno.Logic.Core.Uno;
 public class PlayedCards extends CardList {
 
 	private Card topCard;
-	public Uno m_Uno;
 
-	public PlayedCards(){
-
+	public PlayedCards(ArrayList<Card> cards){
+        super(cards);
+        this.topCard = cardList.get(cardList.size() - 1);
+        this.cardList.remove(cards.size() - 1);
 	}
 
-	public void finalize() throws Throwable {
-		super.finalize();
+	@Override
+	public Card drawTopCard() {
+		topCard = super.drawTopCard();
+		return topCard;
 	}
 
-	Card[] getCards(){
-		return null;
-	}
-
-	/**
-	 * 
-	 * @param card
-	 */
-	public boolean addCard(Card card){
-		return false;
-	}
-
-	public Card drawTopCard(){
-		return null;
-	}
-
+    @Override
+    public void addCard(Card card) {
+        super.addCard(topCard);
+        topCard = card;
+    }
 }
