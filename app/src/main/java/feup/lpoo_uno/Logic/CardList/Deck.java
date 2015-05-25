@@ -1,6 +1,7 @@
 package feup.lpoo_uno.Logic.CardList;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import feup.lpoo_uno.Logic.Card.Card;
 
@@ -19,8 +20,17 @@ public class Deck extends CardList {
 		super(cards);
 	}
 
-    public void shuffle(){ //TODO
-
+    public void shuffle(){ //TODO check if correct
+        Card temp;
+        int index;
+        Random random = new Random();
+        for (int i = this.cardList.size() - 1; i > 0; i--)
+        {
+            index = random.nextInt(i + 1);
+            temp = this.cardList.get(index);
+            this.cardList.set(index, this.cardList.get(i));
+            this.cardList.set(i, temp);
+        }
     }
 
 	public void setCards(ArrayList<Card> cards){

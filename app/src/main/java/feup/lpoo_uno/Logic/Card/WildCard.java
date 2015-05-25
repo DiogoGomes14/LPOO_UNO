@@ -7,7 +7,7 @@ package feup.lpoo_uno.Logic.Card;
  */
 public class WildCard extends Card {
 
-	private String ColorChoosen = null;
+	private String colorChoosen = null;
 
 	public WildCard(){
 
