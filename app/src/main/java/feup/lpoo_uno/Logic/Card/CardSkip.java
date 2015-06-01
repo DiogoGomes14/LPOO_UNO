@@ -7,12 +7,11 @@ package feup.lpoo_uno.Logic.Card;
  */
 public class CardSkip extends ActionCard {
 
-	public CardSkip(int number) {
-		super();
-	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
+    /**
+     * @param color
+     */
+	public CardSkip(Color color) {
+		super(color);
 	}
 
 }

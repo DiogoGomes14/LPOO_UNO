@@ -12,35 +12,46 @@ import feup.lpoo_uno.Logic.CardList.Hand;
  */
 public class Player {
 
+    /**
+     * Hand of the player. List of cards.
+     */
 	private Hand hand;
-	private String name;
 
-	public Player(Hand hand, String name){
+    /**
+     * Name of the player
+     */
+	private final String name;
+
+    /**
+     * @param hand Initial hand of the player
+     * @param name Name of the player
+     */
+	public Player(Hand hand, String name){ // TODO Check hand size
 		this.hand = hand;
 		this.name = name;
 	}
 
-	public void finalize() throws Throwable {
-
-	}
-
-	ArrayList<Card> getHand(){
+    /**
+     * @return list of cards from the player hand
+     */
+    public ArrayList<Card> getHand(){
 		return hand.getCards();
 	}
 
 	/**
 	 *
-     * @param card
+     * @param card card to be added at the end of the player hand
      */
-	void addCard(Card card){
+    public void addCard(Card card){ // TODO Check hand size
 		this.hand.addCard(card);
 	}
 
-	/**
-	 * 
-	 * @param index
-	 */
-	public Card useCard(int index){
+
+    /**
+     * @param index location of the card to be used
+     * @return Card to be used
+     */
+	public Card useCard(int index){ // TODO Check hand size and error handling
 		return this.hand.getCards().get(index);
 	}
 

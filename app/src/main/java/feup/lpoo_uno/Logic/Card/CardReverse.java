@@ -7,12 +7,11 @@ package feup.lpoo_uno.Logic.Card;
  */
 public class CardReverse extends ActionCard {
 
-	public CardReverse(int number) {
-		super();
-	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
+    /**
+     * @param color
+     */
+    public CardReverse(Color color) {
+        super(color);
 	}
 
 }

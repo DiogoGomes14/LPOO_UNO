@@ -13,45 +13,68 @@ import feup.lpoo_uno.Logic.CardList.PlayedCards;
 public class Uno {
 
     /**
-     * enum : left, right
+     * Used to represent the possible states of the board: LEFT or RIGHT
      */
     private enum Orientation {
         LEFT,
         RIGHT
     }
 
+    /**
+     *
+     */
 	private Player currentPlayer;
+
+    /**
+     *
+     */
 	private Deck deck;
-	private PlayedCards playedCards = null;
+
+    /**
+     *
+     */
+	private PlayedCards playedCards;
+
+    /**
+     *
+     */
 	private Player[] players;
-    private Orientation orientation = Orientation.LEFT;
+
+    /**
+     *
+     */
+    private Orientation orientation;
 
     public Uno(){
-
-	}
+        playedCards = null;
+        orientation = Orientation.LEFT;
+    }
 
     public Uno(Deck deck){
         this.deck = deck;
+        playedCards = null;
+        orientation = Orientation.LEFT;
     }
 
-    public void finalize() throws Throwable {
-
+    /**
+     * @return
+     */
+    public boolean mainLoop(){ //TODO
+        return false;
     }
 
-    public void inicializePlayers(Player[] players){
+    /**
+     * @param players Players that will be participating in the game
+     */
+    public void initializePlayers(Player[] players){ //TODO limit number of players
         this.players = players;
         this.currentPlayer = players[new Random().nextInt()];
     }
 
-
-	public boolean mainLoop(){
-		return false;
-	}
-
 	/**
 	 * 
-	 * @param playerIndex
-	 * @param numberCards
+	 * @param playerIndex index of the player to draw the cards
+	 * @param numberCards number of cards to be drawn
 	 */
 	public boolean playerDraw(int playerIndex, int numberCards){
 		if(numberCards == 1 || numberCards == 2 || numberCards == 4){
@@ -63,6 +86,9 @@ public class Uno {
         else return false;
 	}
 
+    /**
+     * Switch the orientation of the board
+     */
 	public void switchOrientation(){
         this.orientation = (this.orientation == Orientation.RIGHT ? Orientation.LEFT : Orientation.LEFT);
 	}
@@ -71,7 +97,7 @@ public class Uno {
 	 *
      * @param player
      */
-	public void playerTurn(Player player){
+	public void playerTurn(Player player){ //TODO verify continuity of the board
 		this.currentPlayer = player;
 	}
 

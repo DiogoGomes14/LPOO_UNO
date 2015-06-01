@@ -20,12 +20,14 @@ public class Deck extends CardList {
 		super(cards);
 	}
 
+    /**
+     *
+     */
     public void shuffle(){ //TODO check if correct
         Card temp;
         int index;
         Random random = new Random();
-        for (int i = this.cardList.size() - 1; i > 0; i--)
-        {
+        for (int i = this.cardList.size() - 1; i > 0; i--) {
             index = random.nextInt(i + 1);
             temp = this.cardList.get(index);
             this.cardList.set(index, this.cardList.get(i));
@@ -33,6 +35,9 @@ public class Deck extends CardList {
         }
     }
 
+    /**
+     * @param cards
+     */
 	public void setCards(ArrayList<Card> cards){
         this.cardList = cards;
     }

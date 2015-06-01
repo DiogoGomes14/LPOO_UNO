@@ -11,8 +11,4 @@ public class Network {
 
 	}
 
-	public void finalize() throws Throwable {
-
-	}
-
 }

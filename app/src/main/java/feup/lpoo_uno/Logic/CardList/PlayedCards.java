@@ -11,8 +11,14 @@ import feup.lpoo_uno.Logic.Card.Card;
  */
 public class PlayedCards extends CardList {
 
+    /**
+     *
+     */
 	private Card topCard;
 
+    /**
+     * @param cards
+     */
 	public PlayedCards(ArrayList<Card> cards){
         super(cards);
         this.topCard = cardList.get(cardList.size() - 1);

@@ -7,23 +7,33 @@ package feup.lpoo_uno.Logic.Card;
  */
 public abstract class Card {
 
-    protected enum Color {RED, YELLOW, GREEN, BLUE}
+    /**
+     * value of the card.
+     */
+    protected final int value;
 
-	protected int value;
+    /**
+     * Enumeration of the possible colors used by the cards
+     */
+    protected enum Color {
+        RED,
+        YELLOW,
+        GREEN,
+        BLUE;
+    }
 
-	public Card(){
-
+    /**
+     * @param value of the card
+     */
+	public Card(int value){
+        this.value = value;
 	}
 
-	public void finalize() throws Throwable {
-
-	}
-
+    /**
+     * @return value of the card
+     */
     public int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
 }

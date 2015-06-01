@@ -7,12 +7,11 @@ package feup.lpoo_uno.Logic.Card;
  */
 public class CardDrawFour extends WildCard {
 
+    /**
+     *
+     */
 	public CardDrawFour(){
 
-	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
 	}
 
 }

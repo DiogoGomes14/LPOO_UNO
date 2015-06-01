@@ -10,30 +10,38 @@ import feup.lpoo_uno.Logic.Card.Card;
  */
 public abstract class CardList {
 
+    /**
+     * List of cards to be used
+     */
 	protected ArrayList<Card> cardList;
 
+    /**
+     * @param cards to initialize the list
+     */
 	public CardList(ArrayList<Card> cards){
 		this.cardList = cards;
 	}
 
+    /**
+     * @return The list of the cards
+     */
 	public ArrayList<Card> getCards(){
 		return cardList;
 	}
 
 	/**
 	 *
-	 * @param card
+	 * @param card to add to list
 	 */
 	public void addCard(Card card){
 		this.cardList.add(card);
 	}
 
-	public Card drawTopCard(){
+    /**
+     * @return Card that is on the top of the list
+     */
+	public Card drawTopCard(){ //TODO does the card need to be removed?
 		return cardList.get(cardList.size() - 1);
-	}
-
-	public void finalize() throws Throwable {
-
 	}
 
 }

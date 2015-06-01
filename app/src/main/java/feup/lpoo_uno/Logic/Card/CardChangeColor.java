@@ -7,12 +7,11 @@ package feup.lpoo_uno.Logic.Card;
  */
 public class CardChangeColor extends WildCard {
 
+    /**
+     *
+     */
 	public CardChangeColor(){
 
-	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
 	}
 
 }

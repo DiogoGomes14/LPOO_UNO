@@ -5,24 +5,23 @@ package feup.lpoo_uno.Logic.Card;
  * @version 1.0
  * @created 25-Mai-2015 15:48:16
  */
-public class WildCard extends Card {
+public abstract class WildCard extends Card {
 
-	private String colorChoosen = null;
+	private Color colorChoosen = null;
 
+    /**
+     *
+     */
 	public WildCard(){
-		this.value = 50;
-	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
+		super(50);
 	}
 
 	/**
 	 * 
 	 * @param color
 	 */
-	public boolean setColorChoosen(String color){
-		return false;
+	public void setColorChoosen(Color color){
+		this.colorChoosen = color;
 	}
 
 }

@@ -7,14 +7,18 @@ package feup.lpoo_uno.Logic.Card;
  */
 public class CardNumbered extends ColoredCard {
 
-	private int number;
+    /**
+     *
+     */
+    private int number;
 
-	public CardNumbered(int number){
-		this.value = number;
-	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
+    /**
+     * @param number
+     * @param color
+     */
+	public CardNumbered(int number, Color color){
+        super(number, color);
+		this.number = number;
 	}
 
 }

@@ -7,12 +7,11 @@ package feup.lpoo_uno.Logic.Card;
  */
 public class CardDrawTwo extends ActionCard {
 
-	public CardDrawTwo(int number) {
-		super();
-	}
-
-	public void finalize() throws Throwable {
-		super.finalize();
+    /**
+     * @param color
+     */
+	public CardDrawTwo(Color color) {
+		super(color);
 	}
 
 }
