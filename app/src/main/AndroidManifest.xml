@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".gui.MainMenu"
+            android:name=".gui.MainMenu1"
             android:label="@string/app_name"
             android:screenOrientation="landscape">
             <intent-filter>
