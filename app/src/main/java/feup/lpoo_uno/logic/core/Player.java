@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import feup.lpoo_uno.logic.card.Card;
 import feup.lpoo_uno.logic.card_list.Hand;
 
+
 /**
  * @author Sony
  * @version 1.0
@@ -12,6 +13,7 @@ import feup.lpoo_uno.logic.card_list.Hand;
  */
 public class Player {
 
+	
     /**
      * Hand of the player. List of cards.
      */
@@ -30,6 +32,11 @@ public class Player {
 		this.hand = hand;
 		this.name = name;
 	}
+	
+	public Player(String name){
+		this.name = name;
+		this.hand = new Hand(new ArrayList<Card>());
+	};
 
     /**
      * @return list of cards from the player hand
@@ -51,8 +58,16 @@ public class Player {
      * @param index location of the card to be used
      * @return Card to be used
      */
-	public Card useCard(int index){ // TODO Check hand size and error handling
-		return this.hand.getCards().get(index);
+	public Card useCard(int index){ 
+		
+		if(index < 0 || index > hand.getCardListSize())
+			throw new ArrayIndexOutOfBoundsException();
+		
+		Card c =  this.hand.getCards().get(index);
+		 this.hand.getCards().remove(index);
+		
+		return c;
+
 	}
 
 }

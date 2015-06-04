@@ -21,4 +21,11 @@ public class CardNumbered extends ColoredCard {
 		this.number = number;
 	}
 
+	@Override
+	public String doAction() {
+		return "CardNumbered";
+		// TODO Auto-generated method stub
+		
+	}
+
 }

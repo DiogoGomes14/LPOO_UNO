@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import feup.lpoo_uno.logic.card.Card;
 
+
 /**
  * @author Sony
  * @version 1.0
@@ -19,6 +20,7 @@ public abstract class CardList {
      * @param cards to initialize the list
      */
 	public CardList(ArrayList<Card> cards){
+
 		this.cardList = cards;
 	}
 
@@ -27,6 +29,13 @@ public abstract class CardList {
      */
 	public ArrayList<Card> getCards(){
 		return cardList;
+	}
+	
+    /**
+     * @return The list of the cards
+     */
+	public int getCardListSize(){
+		return cardList.size();
 	}
 
 	/**
@@ -40,8 +49,11 @@ public abstract class CardList {
     /**
      * @return Card that is on the top of the list
      */
-	public Card drawTopCard(){ //TODO does the card need to be removed?
-		return cardList.get(cardList.size() - 1);
+	public Card drawTopCard(){
+		Card c = cardList.get(cardList.size() - 1);
+		cardList.remove(cardList.size() - 1);
+		
+		return c;
 	}
 
 }

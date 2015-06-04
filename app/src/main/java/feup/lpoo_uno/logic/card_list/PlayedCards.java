@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import feup.lpoo_uno.logic.card.Card;
 
+
 /**
  * @author Sony
  * @version 1.0
@@ -17,18 +18,11 @@ public class PlayedCards extends CardList {
 	private Card topCard;
 
     /**
-     * @param cards
+     * @param card
      */
-	public PlayedCards(ArrayList<Card> cards){
-        super(cards);
-        this.topCard = cardList.get(cardList.size() - 1);
-        this.cardList.remove(cards.size() - 1);
-	}
-
-	@Override
-	public Card drawTopCard() {
-		topCard = super.drawTopCard();
-		return topCard;
+	public PlayedCards(Card card){
+        super(new ArrayList<Card> ());
+        this.topCard = card;
 	}
 
     @Override

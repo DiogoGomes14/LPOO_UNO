@@ -14,4 +14,9 @@ public class CardChangeColor extends WildCard {
 
 	}
 
+	@Override
+	public String doAction() {
+		return "CardChangeColor";
+	}
+
 }

@@ -2,8 +2,9 @@ package feup.lpoo_uno.logic.core;
 
 import java.util.Random;
 
-import feup.lpoo_uno.logic.card_list.Deck;
-import feup.lpoo_uno.logic.card_list.PlayedCards;
+import feup.lpoo_uno.logic.card_list.*;
+import feup.lpoo_uno.logic.card.Card;
+
 
 /**
  * @author Sony
@@ -52,7 +53,7 @@ public class Uno {
 
     public Uno(Deck deck){
         this.deck = deck;
-        playedCards = null;
+        playedCards = new PlayedCards(deck.drawTopCard());
         orientation = Orientation.LEFT;
     }
 
@@ -68,7 +69,7 @@ public class Uno {
      */
     public void initializePlayers(Player[] players){ //TODO limit number of players
         this.players = players;
-        this.currentPlayer = players[new Random().nextInt()];
+        this.currentPlayer = players[new Random().nextInt(players.length)];
     }
 
 	/**
@@ -77,7 +78,11 @@ public class Uno {
 	 * @param numberCards number of cards to be drawn
 	 */
 	public boolean playerDraw(int playerIndex, int numberCards){
-		if(numberCards == 1 || numberCards == 2 || numberCards == 4){
+		
+		if(playerIndex < 0 || playerIndex > players.length)
+			throw new ArrayIndexOutOfBoundsException();
+		
+		if(numberCards == 1 || numberCards == 2 || numberCards == 4 || numberCards == 7){
             for (int i = 0; i < numberCards; i++){
                 players[playerIndex].addCard(deck.drawTopCard());
             }
@@ -99,6 +104,22 @@ public class Uno {
      */
 	public void playerTurn(Player player){ //TODO verify continuity of the board
 		this.currentPlayer = player;
+	}
+	
+	public void initializePlayersHand()
+	{
+		for(int i=0; i < players.length; i++)
+		{
+			playerDraw(i,7);
+		}
+	}
+
+	public Player getPlayers(int index) {
+		
+		if(index < 0 || index > players.length)
+			throw new ArrayIndexOutOfBoundsException();
+		
+		return players[index];
 	}
 
 }

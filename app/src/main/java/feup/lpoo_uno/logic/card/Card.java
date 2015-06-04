@@ -5,7 +5,7 @@ package feup.lpoo_uno.logic.card;
  * @version 1.0
  * @created 25-Mai-2015 15:48:08
  */
-public abstract class Card {
+public abstract class Card implements ICard {
 
     /**
      * value of the card.
@@ -15,7 +15,7 @@ public abstract class Card {
     /**
      * Enumeration of the possible colors used by the cards
      */
-    protected enum Color {
+    public enum Color {
         RED,
         YELLOW,
         GREEN,
@@ -36,4 +36,6 @@ public abstract class Card {
         return value;
     }
 
+ 
+    
 }

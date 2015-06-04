@@ -3,7 +3,7 @@ package feup.lpoo_uno.logic.card_list;
 import java.util.ArrayList;
 import java.util.Random;
 
-import feup.lpoo_uno.logic.card.Card;
+import Logic.Card.Card;
 
 /**
  * @author Sony
@@ -23,7 +23,7 @@ public class Deck extends CardList {
     /**
      *
      */
-    public void shuffle(){ //TODO check if correct
+    public void shuffle(){ //TODO check if correct (passed 2 tests)
         Card temp;
         int index;
         Random random = new Random();
@@ -39,6 +39,7 @@ public class Deck extends CardList {
      * @param cards
      */
 	public void setCards(ArrayList<Card> cards){
+
         this.cardList = cards;
     }
 

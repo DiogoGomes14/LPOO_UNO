@@ -24,4 +24,10 @@ public abstract class WildCard extends Card {
 		this.colorChoosen = color;
 	}
 
+	public Color getColorChoosen() {
+		return colorChoosen;
+	}
+	
+	
+
 }

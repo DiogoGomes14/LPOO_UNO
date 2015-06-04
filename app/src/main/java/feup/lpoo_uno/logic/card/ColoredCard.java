@@ -21,4 +21,11 @@ public abstract class ColoredCard extends Card {
         this.color = color;
 	}
 
+	public Color getColor() {
+		return color;
+	}
+
+
+	
+
 }

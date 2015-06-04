@@ -14,4 +14,10 @@ public class CardSkip extends ActionCard {
 		super(color);
 	}
 
+	@Override
+	public String doAction() {
+		return "CardSkip";
+		
+	}
+
 }

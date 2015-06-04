@@ -14,4 +14,11 @@ public class CardReverse extends ActionCard {
         super(color);
 	}
 
+	@Override
+	public String doAction() {
+		return "CardReverse";
+		// TODO Auto-generated method stub
+		
+	}
+
 }

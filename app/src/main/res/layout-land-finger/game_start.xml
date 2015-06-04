@@ -3,43 +3,23 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:gravity="center_vertical">
+              android:gravity="center_vertical"
+              android:weightSum="1">
 
-    <Button
-        android:layout_width="300dp"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/play_button"
-        android:id="@+id/button"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/abc_button_inset_vertical_material"
-        android:clickable="true"/>
+        android:layout_weight="1.00"
+        android:id="@+id/layout_1">
 
-    <Button
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="@string/play_as_host"
-        android:id="@+id/button2"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/abc_button_inset_vertical_material"
-        android:layout_marginBottom="@dimen/abc_button_inset_vertical_material"
-        android:clickable="true"/>
+    </FrameLayout>
 
-    <Button
-        android:layout_width="300dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings"
-        android:id="@+id/button3"
+        android:text="@string/game_start_loading"
+        android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/abc_button_inset_vertical_material"
-        android:layout_marginBottom="@dimen/abc_button_inset_vertical_material"
-        android:clickable="true"/>
-
-    <Button
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="@string/exit"
-        android:id="@+id/button4"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/abc_button_inset_vertical_material"
-        android:clickable="true"/>
+        style="@android:style/TextAppearance.DeviceDefault.Large"/>
 </LinearLayout>

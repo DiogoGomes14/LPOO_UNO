@@ -14,4 +14,9 @@ public class CardDrawFour extends WildCard {
 
 	}
 
+	@Override
+	public String doAction() {
+		return "CardDrawFour"; 
+	}
+
 }

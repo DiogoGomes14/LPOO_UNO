@@ -14,4 +14,9 @@ public class CardDrawTwo extends ActionCard {
 		super(color);
 	}
 
+	@Override
+	public String doAction() {
+		return "CardDrawTwo";
+	}
+
 }
